@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inspiration</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      color: #fff;
+      overflow: hidden;
+      background-color: #000;
+    }
+
+    .video-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .video-background video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .quote-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1;
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .quote {
+      font-size: 2rem;
+      font-style: italic;
+      max-width: 80%;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+      margin: 0;
+    }
+
+    .quote p {
+      margin: 10px 0;
+    }
+
+    @media (max-width: 600px) {
+      .quote {
+        font-size: 1.5rem;
+      }
+    }
+
+    .quote-buttons {
+      margin-top: 20px;
+    }
+
+    .quote-buttons button {
+      background-color: #ff6347;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      margin: 5px;
+      border-radius: 5px;
+    }
+
+    .quote-buttons button:hover {
+      background-color: #e5533d;
+    }
+
+  </style>
+</head>
+<body>
+  <!-- Video Background -->
+  <div class="video-background">
+    <video autoplay muted loop>
+      <source src="aff.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <!-- Quote Overlay -->
+  <div class="quote-overlay">
+    <div>
+      <div class="quote" id="quote">
+        <!-- The quote text will be dynamically inserted here -->
+      </div>
+      <div class="quote-buttons">
+        <button onclick="previousQuote()">Live</button>
+        <button onclick="nextQuote()">Die</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const quotes = [
+      "\"Relax, Life is Beautiful.\" - God",
+      "\"It will be all OK at the End and if it isn't CHILL OUT this is Not The End\" - Aryabhatta",
+      "\"Believe you can and you're halfway there.\" - Theodore Roosevelt", 
+      "\"The only way to do great work is to love what you do.\" - Steve Jobs",
+      "\"The future belongs to those who believe in the beauty of their dreams.\" - Eleanor Roosevelt",
+      "\"In the middle of difficulty lies opportunity.\" - Albert Einstein",
+      "\"Every moment is a fresh beginning.\" - T.S. Eliot"
+    ];
+
+    let currentQuoteIndex = 0;
+
+    function showQuote(index) {
+      const quoteElement = document.getElementById('quote');
+      quoteElement.style.opacity = 0;
+
+      setTimeout(() => {
+        quoteElement.innerHTML = `<p>${quotes[index]}</p>`;
+        quoteElement.style.opacity = 1;
+      }, 500); // Adjust this timing to match the transition duration
+    }
+
+    function nextQuote() {
+      currentQuoteIndex = (currentQuoteIndex + 1) % quotes.length;
+      showQuote(currentQuoteIndex);
+    }
+
+    function previousQuote() {
+      currentQuoteIndex = (currentQuoteIndex - 1 + quotes.length) % quotes.length;
+      showQuote(currentQuoteIndex);
+    }
+
+    // Initial quote display
+    showQuote(currentQuoteIndex);
+
+    // Auto-rotate quotes every 5 seconds
+    setInterval(nextQuote, 5000);
+  </script>
+</body>
+</html>

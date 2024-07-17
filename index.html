@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dark Calculations</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      color: #fff;
+      overflow: hidden;
+      background-color: #000;
+    }
+
+    .video-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .video-background video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+      border-radius: 10px; /* Optional: Adds rounded corners */
+    }
+
+    header, footer {
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 10px;
+    }
+
+    header h1, footer p {
+      margin: 0;
+    }
+
+    .content {
+      padding-top: 50px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+    }
+
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    nav ul li {
+      display: inline;
+      margin-right: 15px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #ff6347;
+    }
+
+    #creepy-stories ul {
+      text-align: left;
+      margin: 0 auto;
+      display: inline-block;
+    }
+
+    #creepy-stories ul li {
+      margin-bottom: 10px;
+    }
+
+    .button {
+      background-color: #ff6347;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .button:hover {
+      background-color: #e5533d;
+    }
+
+    .data-notice {
+      font-size: 0.9rem;
+      color: #bbb;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 10px;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Video Background -->
+  <div class="video-background">
+    <!-- Local Video Background -->
+    <video autoplay muted loop>
+      <source src="bg.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <!-- Header Section -->
+  <header>
+    <div class="container">
+      <h1>Death Clock</h1>
+      <nav>
+        <ul>
+          <li><a href="homepage\Home.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="about.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content Section -->
+  <section class="main-content">
+    <div class="container">
+      <h2>Explore the Dark Side of Life</h2>
+      <p>"We spend our lives chasing phantoms,only to realize ghost is ourselves"</p>
+      <!-- Form for Input -->
+      <form id="input-form">
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required>
+        <button id="calculate-btn" class="button">Calculate</button>
+      </form>
+      <!-- Creepy Facts and Stories -->
+      <div id="creepy-stories">
+        <h3>Creepy Facts and Stories</h3>
+        <ul>
+          <li>In the 19th century, it was common to photograph deceased loved ones.</li>
+          <li>Some people experience "deathbed visions" of deceased relatives or friends before passing away.</li>
+          <li>The phenomenon of "sudden death" can occur due to underlying heart conditions or other factors.</li>
+          <li>The average person walks past a killer about 36 times in their life.</li>
+          <li>There's an island in Italy where people pay to visit and watch mummified corpses.</li>
+        </ul>
+      </div>
+      <!-- Data Collection Notice -->
+      <p class="data-notice">We do not collect any personal data from our visitors. Your privacy and safety are important to us.</p>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 Dark Calculations. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Function to redirect to the new webpage
+    function redirectToNewPage() {
+      // Change the URL to the relative path or a proper URL
+      var win = window.open("aff/aff.html", '_blank');
+      if (win) {
+        // Browser has allowed the new window to open
+        win.focus();
+      } else {
+        // Browser has blocked the new window from opening
+        alert('Please allow popups for this website to proceed.');
+      }
+    }
+
+    // Event listener for the calculate button
+    document.getElementById("calculate-btn").addEventListener("click", function(event) {
+      // Prevent the default form submission behavior
+      event.preventDefault();
+      
+      // Redirect to the new webpage
+      redirectToNewPage();
+    });
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>

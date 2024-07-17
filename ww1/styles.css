@@ -1,0 +1,167 @@
+body {
+  font-family: 'Courier New', Courier, monospace;
+  background-color: #000;
+  color: #00ff00; /* Green */
+  margin: 0;
+  padding: 0;
+}
+/* Glitch animation for header */
+.glitch-animation {
+  position: relative;
+  overflow: hidden;
+}
+
+.glitch-animation::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #00ff00; /* Green */
+  mix-blend-mode: screen;
+  animation: glitch-color 1s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-color {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-5px, 5px);
+  }
+  40% {
+    transform: translate(5px, -5px);
+  }
+  60% {
+    transform: translate(-5px, 5px);
+  }
+  80% {
+    transform: translate(5px, -5px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+header {
+  background-color: #000;
+  color: #ff0000; /* Red */
+  text-align: center;
+  padding: 20px;
+  border-bottom: 2px solid #00ff00; /* Green */
+}
+
+h1 {
+  font-size: 2em;
+  position: relative;
+  overflow: hidden;
+}
+
+h1::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #00ff00; /* Green */
+  mix-blend-mode: screen;
+  animation: glitch-color 1s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-color {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-5px, 5px);
+  }
+  40% {
+    transform: translate(5px, -5px);
+  }
+  60% {
+    transform: translate(-5px, 5px);
+  }
+  80% {
+    transform: translate(5px, -5px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+main {
+  padding: 20px;
+}
+
+section {
+  margin-bottom: 40px;
+}
+
+h2 {
+  color: #ff0000; /* Red */
+  font-size: 1.5em;
+}
+
+ul {
+  list-style-type: none;
+}
+
+ul li a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+ul li a:hover {
+  color: #00ff00; /* Green */
+}
+
+footer {
+  background-color: #000;
+  color: #999;
+  text-align: center;
+  padding: 10px 0;
+
+
+  /* Glitch animation for header */
+.glitch-animation {
+  position: relative;
+  overflow: hidden;
+}
+
+.glitch-animation::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #00ff00; /* Green */
+  mix-blend-mode: screen;
+  animation: glitch-color 1s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-color {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-5px, 5px);
+  }
+  40% {
+    transform: translate(5px, -5px);
+  }
+  60% {
+    transform: translate(-5px, 5px);
+  }
+  80% {
+    transform: translate(5px, -5px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+}
